@@ -1,0 +1,13 @@
+dbt_fabric_project:
+  target: dev
+  outputs:
+    dev:
+      type: fabric
+      driver: 'ODBC Driver 18 for SQL Server'
+      server: 'hqoxwg2zfsau7jfo2zoc42o36e-q3huyr77sj6uhkfw4ds5irmrp4.datawarehouse.fabric.microsoft.com'
+      port: 1433
+      database: lakehouse_dev
+      schema: dev
+      authentication: ActiveDirectoryPassword
+      user: phuocvd@thuydeptrai.onmicrosoft.com
+      password: "{{ env_var('password') }}"
