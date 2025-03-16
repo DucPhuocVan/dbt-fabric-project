@@ -1,0 +1,12 @@
+version: 2
+sources:
+  - name: stg
+    schema: dbo
+    database: lakehouse_dev
+    tables:
+      - name: dimension_city
+      - name: dimension_customer
+      - name: dimension_date
+      - name: dimension_employee
+      - name: dimension_stock_item
+      - name: fact_sale
