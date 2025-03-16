@@ -8,6 +8,10 @@ dbt_fabric_project:
       port: 1433
       database: lakehouse_dev
       schema: dev
-      authentication: ActiveDirectoryPassword
-      user: phuocvd@thuydeptrai.onmicrosoft.com
-      password: "{{ env_var('password') }}"
+      # authentication: ActiveDirectoryPassword
+      # user: phuocvd@thuydeptrai.onmicrosoft.com
+      # password: "{{ env_var('password') }}"
+      authentication: ServicePrincipal
+      tenant_id: "{{ env_var('tenant_id') }}"
+      client_id: "{{ env_var('client_id') }}"
+      client_secret: "{{ env_var('client_secret') }}"
