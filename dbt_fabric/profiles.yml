@@ -11,3 +11,7 @@ dbt_fabric_project:
       authentication: ActiveDirectoryPassword
       user: phuocvd@thuydeptrai.onmicrosoft.com
       password: "{{ env_var('password') }}"
+      encrypt: yes
+      trust_server_certificate: false
+      connection_timeout: 30
+
