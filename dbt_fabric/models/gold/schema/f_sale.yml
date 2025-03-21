@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: f_sale
+    columns:
+      - name: CityKey
+        tests:
+          - relationships:
+              to: ref('d_city')
+              field: CityKey
+
+      - name: CustomerKey
+        tests:
+          - relationships:
+              to: ref('d_customer')
+              field: CustomerKey
+
+      - name: SalespersonKey
+        tests:
+          - relationships:
+              to: ref('d_employee')
+              field: SalespersonKey
+
+      - name: StockItemKey
+        tests:
+          - relationships:
+              to: ref('d_item')

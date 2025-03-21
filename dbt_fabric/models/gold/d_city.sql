@@ -1,3 +1,6 @@
 {{ config(schema=var('gold_schema')) }}
 
-SELECT * FROM {{ ref('city') }}
+SELECT 
+    CityKey,
+    City
+FROM {{ ref('city') }}

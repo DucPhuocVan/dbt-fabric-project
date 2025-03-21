@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: item
+    # test for model
+    tests:
+      - dbt_utils.duplicate_model:
+          group_by_columns:
+            - SellingPackage
+            - BuyingPackage
+            
+    # test for column
+    columns:
+      - name: Brand
+        tests:
+          - unique:
+              config:
+                severity: warn
+                where: "StockItemKey is not null"
+                # store_failures: true
+                # schema: test_failures

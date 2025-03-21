@@ -27,3 +27,8 @@ models:
     gold:
       +materialized: table
       +schema: gold
+
+tests:
+  dbt_fabric:
+    +severity: warn
+    +store_failures: true

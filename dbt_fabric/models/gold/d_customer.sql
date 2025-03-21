@@ -1,3 +1,6 @@
 {{ config(schema=var('gold_schema')) }}
 
-SELECT * FROM {{ ref('customer') }}
+SELECT 
+    CustomerKey,
+    Customer
+FROM {{ ref('customer') }}

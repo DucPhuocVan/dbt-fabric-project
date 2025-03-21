@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: d_city
+    columns:
+      - name: CityKey
+        tests:
+          - unique
+          - not_null

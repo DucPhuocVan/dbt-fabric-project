@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  # table: sale
+  - name: sale
+    # test for model
+    tests:
+      - dbt_utils.equal_rowcount:
+          compare_model: source('stg', 'dimension_stock_item')
+      - dbt_utils.equal_sum:
+              compare_model: source('stg', 'fact_sale')
+              compare_column: 
+                - Quantity
+      - dbt_expectations.expect_table_row_count_to_equal_other_table:
+          compare_model: source('stg', 'fact_sale')
+          factor: 1
+    # test for column
+    columns:
+      - name: Quantity
+        tests:
+          - greater_than_1

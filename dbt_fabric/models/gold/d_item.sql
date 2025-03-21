@@ -1,3 +1,4 @@
 {{ config(schema=var('gold_schema')) }}
 
-SELECT * FROM {{ ref('item') }}
+SELECT StockItemKey, StockItem 
+FROM {{ ref('item') }}
